@@ -2,7 +2,7 @@
 #include "PersonImplementation.h"
 #include "PersonInterfaces.h"
 
-class CRacer : CPersonImpl<IRacer>
+class CRacer : public CPersonImpl<IRacer>
 {
 public:
 	CRacer(std::string name, size_t award);

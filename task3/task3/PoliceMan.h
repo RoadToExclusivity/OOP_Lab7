@@ -2,7 +2,7 @@
 #include "PersonImplementation.h"
 #include "PersonInterfaces.h"
 
-class CPoliceMan : CPersonImpl<IPoliceMan>
+class CPoliceMan : public CPersonImpl<IPoliceMan>
 {
 public:
 	CPoliceMan(std::string name, std::string departmentName);

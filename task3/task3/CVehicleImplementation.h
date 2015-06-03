@@ -5,7 +5,7 @@ class CVehicleImpl : public Base
 {
 public:
 	CVehicleImpl(size_t places)
-		:m_passengers(places), m_occupied(0)
+		:m_passengers(), m_places(places), m_occupied(0)
 	{
 	}
 
@@ -16,12 +16,12 @@ public:
 
 	virtual bool IsFull() const
 	{
-		return m_occupied == m_passengers.size();
+		return m_occupied == m_places;
 	}
 
 	virtual size_t GetPlaceCount() const
 	{
-		return m_passengers.size();
+		return m_places;
 	}
 
 	virtual size_t GetPassengerCount() const
@@ -70,4 +70,5 @@ public:
 private:
 	std::vector<std::shared_ptr<Passenger>> m_passengers;
 	size_t m_occupied;
+	size_t m_places;
 };
